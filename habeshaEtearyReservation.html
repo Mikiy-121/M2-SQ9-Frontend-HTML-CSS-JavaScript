@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habesha Eatery — Traditional Ethiopian Dining in Addis Ababa</title>
+    <meta
+      name="description"
+      content="Habesha Eatery serves authentic Ethiopian cuisine in Addis Ababa. Reserve a table, browse our menu, and find us on the map."
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Habesha Eatery</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Contact & Hours</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="reserve">
+        <h2>Make a Reservation</h2>
+        <form action="#" method="post">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="tel">Phone Number</label>
+          <input
+            type="tel"
+            id="tel"
+            name="tel"
+            required
+            pattern="[0-9+\-\s]+"
+          />
+
+          <label for="date">Reservation Date</label>
+          <input type="date" id="date" name="date" required />
+
+          <label for="party-size">Party Size</label>
+          <input
+            type="number"
+            id="party-size"
+            name="party-size"
+            min="1"
+            max="20"
+            required
+          />
+
+          <label for="requests">Special Requests</label>
+          <textarea id="requests" name="requests" rows="4"></textarea>
+
+          <button type="submit">Reserve Table</button>
+        </form>
+      </section>
+
+      <section id="menu">
+        <h2>Our Menu</h2>
+        <table>
+          <caption>
+            Habesha Eatery — Traditional Dishes
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Dish</th>
+              <th scope="col">Description</th>
+              <th scope="col">Price (ETB)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Doro Wat</th>
+              <td>Spiced chicken stew with berbere sauce</td>
+              <td>350</td>
+            </tr>
+            <tr>
+              <th scope="row">Tibs</th>
+              <td>Sautéed beef with onions and peppers</td>
+              <td>300</td>
+            </tr>
+            <tr>
+              <th scope="row">Shiro</th>
+              <td>Ground chickpea stew</td>
+              <td>200</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="location">
+        <h2>Visit Us</h2>
+        <img
+          src="doro-wat.jpg"
+          alt="A plate of Doro Wat served with injera, garnished with a boiled egg"
+        />
+
+        <iframe
+          title="Map showing Habesha Eatery location in Addis Ababa"
+          src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Habesha Eatery. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
