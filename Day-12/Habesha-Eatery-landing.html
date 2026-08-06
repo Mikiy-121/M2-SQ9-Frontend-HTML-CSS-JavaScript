@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habesha Eatery — Ethiopian Restaurant in Addis Ababa</title>
+    <meta
+      name="description"
+      content="Reserve a table at Habesha Eatery. View our menu, find us on the map, and enjoy authentic Ethiopian cuisine in Addis Ababa."
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Habesha Eatery</h1>
+    </header>
+
+    <main>
+      <img
+        src="hero.jpg"
+        alt="Traditional Ethiopian dishes served on injera at Habesha Eatery"
+        loading="lazy"
+      />
+
+      <section>
+        <h2>Make a Reservation</h2>
+        <form action="#" method="post">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="tel">Phone Number</label>
+          <input
+            type="tel"
+            id="tel"
+            name="tel"
+            pattern="09[0-9]{8}"
+            placeholder="09XXXXXXXX"
+            required
+          />
+
+          <label for="guests">Number of Guests</label>
+          <input
+            type="number"
+            id="guests"
+            name="guests"
+            min="1"
+            max="20"
+            required
+          />
+
+          <label for="date">Reservation Date</label>
+          <input type="date" id="date" name="date" required />
+
+          <button type="submit">Reserve Table</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Our Menu</h2>
+        <table>
+          <caption>
+            Habesha Eatery Menu
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Dish</th>
+              <th scope="col">Price (ETB)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Doro Wat</th>
+              <td>350</td>
+            </tr>
+            <tr>
+              <th scope="row">Tibs</th>
+              <td>300</td>
+            </tr>
+            <tr>
+              <th scope="row">Shiro</th>
+              <td>200</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Find Us</h2>
+        <iframe
+          title="Map showing Habesha Eatery location"
+          src="https://maps.app.goo.gl/AbUKeqhVAE72UrMz9"
+          width="600"
+          height="450"
+          loading="lazy"
+        >
+        </iframe>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Habesha Eatery</p>
+    </footer>
+  </body>
+</html>
