@@ -8,6 +8,100 @@
       name="description"
       content="Habesha Eatery serves authentic Ethiopian cuisine in Addis Ababa. Reserve a table, browse our menu, and find us on the map."
     />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+
+      header {
+        background-color: #005f8b;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 1rem;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      main {
+        padding: 2rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin-bottom: 2rem;
+      }
+
+      form label {
+        margin-top: 1rem;
+        color: #005f8b;
+      }
+
+      form input,
+      form textarea,
+      form button {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2rem;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 0.75rem;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f4f4f4;
+      }
+      input {
+        border-radius: 10px;
+      }
+
+      footer {
+        background-color: #005f8b;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      .doro-wat {
+        text-align: center;
+        margin-top: 2rem;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -15,7 +109,8 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="contact.html">Contact & Hours</a></li>
+          <li><a href="opening-hours.html">Contact & Hours</a></li>
+          <li><a href="reservation.html">Visit us</a></li>
         </ul>
       </nav>
     </header>
@@ -92,23 +187,15 @@
         </table>
       </section>
 
-      <section id="location">
-        <h2>Visit Us</h2>
+      <section class="doro-wat">
         <img
-          src="doro-wat.jpg"
+          src="https://i.pinimg.com/236x/f8/c2/70/f8c270635890283d723ea26103e1a0bd.jpg"
           alt="A plate of Doro Wat served with injera, garnished with a boiled egg"
+          width="400"
+          height="auto"
+          object-fit="cover"
         />
-
-        <iframe
-          title="Map showing Habesha Eatery location in Addis Ababa"
-          src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
-          width="600"
-          height="450"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-        >
-        </iframe>
+        />
       </section>
     </main>
 
