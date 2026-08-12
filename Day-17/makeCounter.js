@@ -17,6 +17,7 @@ console.log(counterA()); // 2
 console.log(counterA()); // 3
 
 const counterB = makeCounter();
+
 console.log(counterB()); // 1 (separate closure, own private count)
 
 // once(fn) — the closure remembers a private "called" flag,
