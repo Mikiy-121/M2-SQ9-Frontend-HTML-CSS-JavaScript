@@ -1,0 +1,74 @@
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 0 16px;
+  color: #1a1a1a;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+#search-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+#search-form input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#search-form button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #1e3a8a;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#search-form button:hover {
+  background: #16306e;
+}
+
+#facts {
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  min-height: 80px;
+}
+
+#facts.loading,
+#facts.error {
+  color: #666;
+  font-style: italic;
+}
+
+#facts.error {
+  color: #b91c1c;
+}
+
+#facts .flag {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+#facts .fact {
+  margin: 4px 0;
+}
+
+#facts .fact strong {
+  display: inline-block;
+  min-width: 100px;
+}

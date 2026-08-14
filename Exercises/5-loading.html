@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 20 - Loading States</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 480px; margin: 60px auto; }
+  #status { padding: 16px; border-radius: 8px; }
+  .loading { background: #eef2ff; color: #3730a3; }
+  .success { background: #ecfdf5; color: #065f46; }
+  .error   { background: #fef2f2; color: #991b1b; }
+  button { margin-top: 16px; padding: 8px 14px; }
+</style>
+</head>
+<body>
+  <h1>USD → ETB rate</h1>
+  <div id="status" class="loading">Loading...</div>
+  <button id="reload">Reload</button>
+
+  
+
+<script>
+  const statusEl = document.getElementById('status');
+
+  async function loadRate() {
+    statusEl.className = 'loading';
+    statusEl.textContent = 'Loading...';
+
+    try {
+      const res = await fetch('https://open.er-api.com/v6/latest/USD');
+
+      if (!res.ok) {
+        throw new Error(`Request failed: ${res.status}`);
+      }
+
+      const data = await res.json();
+      statusEl.className = 'success';
+      statusEl.textContent = `1 USD = ${data.rates.ETB} ETB`;
+    } catch (err) {
+      statusEl.className = 'error';
+      statusEl.textContent = `Error: ${err.message}`;
+    }
+  }
+
+  document.getElementById('reload').addEventListener('click', loadRate);
+  loadRate();
+</script>
+</body>
+</html>
