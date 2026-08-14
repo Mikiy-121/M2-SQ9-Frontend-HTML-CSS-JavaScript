@@ -1,22 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Country Facts</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Country Facts</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Country Facts</h1>
+  <main class="card">
+    <h1>Country Facts</h1>
 
-  <form id="search-form">
-    <input id="country-input" placeholder="e.g. Ethiopia" autocomplete="off" />
-    <button type="submit">Search</button>
-  </form>
+    <form id="search-form" class="search-form">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search a country (e.g.Ethiopia)"
+        autocomplete="off"
+      >
+      <button type="submit">Search</button>
+    </form>
 
-  <div id="facts"></div>
+    <section id="facts" class="facts">Loading...</section>
+  </main>
 
-  <script src="./app.js" defer></script>
+  <script src="app.js"></script>
 </body>
 </html>
