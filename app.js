@@ -18,7 +18,7 @@ async function showCountry(name) {
   out.textContent = "Loading...";
 
   try {
-    const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+    const res = await fetch(`https://countries.dev/name/${name}`);
     if (!res.ok) throw new Error("Country not found");
 
     const [c] = await res.json();
