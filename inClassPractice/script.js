@@ -11,3 +11,11 @@ select.addEventListener("change", () => {
   localStorage.setItem("lang", select.value);
 });
 
+const orders = {
+    orderId: 12345,
+    customerName: "Abel",
+    totalOrder: 5
+}
+console.log(orders);
+const storedOrders = JSON.stringify(orders);
+localStorage.setItem("orders", storedOrders);

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign Up</title>
+<link rel="stylesheet" href="./style.css">
+<script src="./app.js" defer></script>
+</head>
+<body>
+
+  <h1>Create your account</h1>
+
+  <form id="signup-form" novalidate>
+    <label for="name">Full name</label>
+    <input type="text" id="name" name="name" placeholder="e.g. Abebe Kebede" autocomplete="name">
+
+    <label for="phone">Phone number</label>
+    <input type="text" id="phone" name="phone" placeholder="e.g. 0912345678 or +251912345678" autocomplete="tel">
+
+    <div id="error" role="alert"></div>
+    <div id="success" role="status"></div>
+
+    <button type="submit">Sign up</button>
+  </form>
+
+  <div id="count"></div>
+
+ 
+
+</body>
+</html>
