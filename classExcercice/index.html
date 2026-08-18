@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Birr watch</title>
+  </head>
+  <body>
+    <h1>Birr Watch</h1>
+    <p id="status">Loading rates...</p>
+    <form id="convert-form">
+      <input id="amount" type="number" value="100" />
+      <select id="currency"></select>
+      <button>Convert</button>
+    </form>
+    <p id="result"></p>
+    <h2>Watchlist</h2>
+    <ul id="watchlist"></ul>
+    <button type="button" id="clear-watchlist">Clear watchlist</button>
+    <h2>History</h2>
+    <ul id="history"></ul>
+    <button type="button" id="clear-history">Clear history</button>
+    <script src="./app.js"></script>
+  </body>
+</html>
