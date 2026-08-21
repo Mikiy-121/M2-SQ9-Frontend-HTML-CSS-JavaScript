@@ -1,0 +1,364 @@
+:root {
+  --terracotta: #c1694f;
+  --terracotta-soft: #f3e3dd;
+  --teal: #3f6e64;
+  --teal-soft: #e4ede9;
+  --ink: #33291f;
+  --muted: #8a7a6a;
+  --line: #e8ddd2;
+  --radius: 10px;
+  --bg: #faf6f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+header {
+  padding: 20px 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--terracotta);
+}
+
+.tagline {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+#search {
+  flex: 1;
+  min-width: 160px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  color: var(--ink);
+  background: #fff;
+}
+
+#search:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  main {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+}
+
+#cities {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.loading,
+.empty {
+  color: var(--muted);
+  grid-column: 1 / -1;
+}
+
+.city {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.city.selected {
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 1px var(--terracotta);
+}
+
+.city h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.city .temp {
+  color: var(--terracotta);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.city .condition {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.city-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.city button.select {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--terracotta);
+  border-radius: 6px;
+  background: var(--terracotta-soft);
+  color: var(--terracotta);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.city button.select:hover {
+  background: var(--terracotta);
+  color: #fff;
+}
+
+.city button.select:disabled {
+  background: #f1efe9;
+  border-color: var(--line);
+  color: var(--muted);
+  cursor: default;
+}
+
+.city button.save {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--teal);
+  border-radius: 6px;
+  background: var(--teal-soft);
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.city button.save:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+.city button.save:disabled {
+  background: #f1efe9;
+  border-color: var(--line);
+  color: var(--muted);
+  cursor: default;
+}
+
+aside#saved {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+aside#saved h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+#saved-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#saved-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+#saved-list li.empty {
+  border-bottom: none;
+  color: var(--muted);
+}
+
+#saved-list button.rm {
+  border: 1px solid var(--terracotta);
+  background: var(--terracotta-soft);
+  color: var(--terracotta);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+#saved-list button.rm:hover {
+  background: var(--terracotta);
+  color: #fff;
+}
+
+#reserve-section {
+  max-width: 1000px;
+  margin: 0 auto 1rem;
+  padding: 0 16px;
+}
+
+#reserve-section h2 {
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+#reserve-section h3 {
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin: 1.25rem 0 0.5rem;
+}
+
+#reserve-form {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+#reserve-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  flex: 1;
+  min-width: 140px;
+}
+
+#reserve-form input,
+#reserve-form select {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: #fff;
+}
+
+#reserve-form input:focus,
+#reserve-form select:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+#reserve-form button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: var(--terracotta);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  height: 38px;
+}
+
+#reserve-form button:hover {
+  opacity: 0.9;
+}
+
+#reservations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+#reservations-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+#reservations-list li:last-child {
+  border-bottom: none;
+}
+
+#reservations-list li.empty {
+  color: var(--muted);
+  padding: 12px;
+}
+
+#reservations-list button.rm-reservation {
+  border: 1px solid var(--terracotta);
+  background: var(--terracotta-soft);
+  color: var(--terracotta);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+#reservations-list button.rm-reservation:hover {
+  background: var(--terracotta);
+  color: #fff;
+}
+
+.form-error {
+  flex-basis: 100%;
+  min-height: 1.2em;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--terracotta);
+}
+
+.form-error.success {
+  color: var(--teal);
+}
+
+footer {
+  text-align: center;
+  padding: 20px 16px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+}

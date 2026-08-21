@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bole Weather</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <h1>Reserve a Hotel</h1>
+        <p class="tagline">Find and reserve a hotel in your favorite Ethiopian cities.</p>
+      </div>
+      <input
+        id="search"
+        type="text"
+        placeholder="Search Ethiopian cities…"
+        aria-label="Search cities"
+      />
+    </header>
+
+    <main>
+      <section id="cities" aria-label="Cities">
+        <p class="loading">Loading cities…</p>
+      </section>
+
+      <aside id="saved" aria-label="Saved cities">
+        <h2>Saved</h2>
+        <ul id="saved-list"></ul>
+      </aside>
+    </main>
+
+    <section id="reserve-section" aria-label="Reserve a hotel">
+      <h2>Reserve a hotel</h2>
+      <form id="reserve-form" novalidate>
+        <label>
+          City
+          <select id="reserve-city"></select>
+        </label>
+        <label>
+          Hotel
+          <select id="reserve-hotel"></select>
+        </label>
+        <label>
+          Name
+          <input id="reserve-name" type="text" placeholder="Your name" />
+        </label>
+        <label>
+          Phone (TeleBirr)
+          <input id="reserve-phone" type="text" placeholder="09xxxxxxxx" />
+        </label>
+        <p id="reserve-error" class="form-error" aria-live="polite"></p>
+        <button type="submit">Reserve</button>
+      </form>
+
+      <h3>My reservations</h3>
+      <ul id="reservations-list"></ul>
+    </section>
+
+    <footer>
+      <p>Live weather for Ethiopian cities.</p>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
